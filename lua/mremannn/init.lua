@@ -23,6 +23,7 @@ vim.diagnostic.config({
 vim.opt.termguicolors = true
 --vim.opt.shortmess = I
 vim.opt.shortmess:append("I")
+vim.o.wrap = false
 --require("bufferline").setup {}
 -- Eviline config for lualine
 -- Author: shadmansaleh
