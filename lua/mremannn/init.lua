@@ -1,8 +1,6 @@
 -- all custom binds and shiii can go here
 vim.g.mapleader = " "
 -- disable netrw at the very start of your init.lua
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 vim.o.number = true
 vim.o.relativenumber = true
 -- optionally enable 24-bit colour
@@ -13,18 +11,11 @@ vim.opt.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
 -- empty setup using defaults
-require("nvim-tree").setup()
 -- Apply diagnostic config (inline errors)
-vim.diagnostic.config({
-	virtual_text = { spacing = 2, prefix = "●" },
-	signs = true,
-	underline = true,
-})
 vim.opt.termguicolors = true
 --vim.opt.shortmess = I
 vim.opt.shortmess:append("I")
 vim.o.wrap = false
-vim.keymap.set("n", "<leader>h", "<cmd>noh<CR>")
 local lualine = require("lualine")
 local colors = {
 	bg = "#202328",
