@@ -1,5 +1,8 @@
 -- all custom binds and shiii can go here
+vim.o.hlsearch = false
+vim.o.incsearch = true
 vim.g.mapleader = " "
+vim.o.scrolloff = 10
 -- disable netrw at the very start of your init.lua
 vim.o.number = true
 vim.o.relativenumber = true
