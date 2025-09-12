@@ -8,7 +8,6 @@ vim.o.number = true
 vim.o.relativenumber = true
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
-vim.opt.clipboard = "unnamedplus"
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.o.shiftwidth = 4
@@ -19,6 +18,7 @@ vim.opt.termguicolors = true
 --vim.opt.shortmess = I
 vim.opt.shortmess:append("I")
 vim.o.wrap = false
+vim.keymap.set({ "v", "x" }, "Y", '"+y')
 local lualine = require("lualine")
 local colors = {
 	bg = "#202328",
