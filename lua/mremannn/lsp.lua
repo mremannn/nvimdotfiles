@@ -14,9 +14,12 @@ vim.diagnostic.config({
 	severity_sort = true,
 })
 
--- 🔹 Show diagnostics in floating window on hover
-vim.api.nvim_create_autocmd("CursorHold", {
-	callback = function()
-		vim.diagnostic.open_float(nil, { focus = false, border = "rounded" })
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(ev)
+		local opts = { buffer = ev.buf }
+
+		vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+		vim.keymap.set("n", "E", vim.diagnostic.open_float, opts)
 	end,
 })

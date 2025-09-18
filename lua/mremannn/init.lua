@@ -1,6 +1,6 @@
 require("mremannn.lazy")
-require("mremannn.lspdefine")
-require("mremannn.lualinetheme")
+require("mremannn.lsp")
+
 -- set map leader (kinda redundant but whatever)
 vim.g.mapleader = " "
 
@@ -30,5 +30,14 @@ vim.opt.shortmess:append("I")
 -- disable line wrap
 vim.o.wrap = false
 
+-- enable undo file
+vim.o.swapfile = false
+vim.o.backup = false
+vim.o.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.o.undofile = true
+
 -- the one keymap (shift y yanks to system clipboard)
 vim.keymap.set({ "v", "x" }, "Y", '"+y')
+
+-- sets status bar to be transparent
+vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" })

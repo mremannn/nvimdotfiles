@@ -12,19 +12,11 @@ return {
 		dependencies = { "neovim/nvim-lspconfig" },
 		config = function()
 			local mason_lspconfig = require("mason-lspconfig")
-
 			mason_lspconfig.setup({
-				ensure_installed = { "lua_ls", "gopls" }, -- auto-install
 				handlers = {
 					function(server_name)
 						require("lspconfig")[server_name].setup({
-							capabilities = require("blink.cmp").get_lsp_capabilites(),
-							on_attach = function(_, bufnr)
-								local opts = { buffer = bufnr, silent = true }
-								vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-								vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-								vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
-							end,
+							capabilities = require("blink.cmp").get_lsp_capabilities(),
 						})
 					end,
 				},
@@ -55,10 +47,16 @@ return {
 			completion = { documentation = { auto_show = true } },
 
 			sources = {
-				default = { "lsp", "path", "snippets", "buffer" },
+				default = { "lsp", "path" }, --"snippets","buffer"
 			},
 			fuzzy = { implementation = "prefer_rust_with_warning" },
 		},
 		opts_extend = { "sources.default" },
+	},
+	{
+		"j-hui/fidget.nvim",
+		opts = {
+			-- options
+		},
 	},
 }
