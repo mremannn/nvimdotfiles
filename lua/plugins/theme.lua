@@ -7,6 +7,7 @@ return {
 		vim.cmd.colorscheme("carbonfox")
 	end,
 }
+
 --return {
 --	"rose-pine/neovim",
 --	lazy = false,
@@ -14,3 +15,5 @@ return {
 --		vim.cmd.colorscheme("rose-pine")
 --	end,
 --}
+
+--return { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... }

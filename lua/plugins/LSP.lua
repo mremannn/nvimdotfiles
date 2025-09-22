@@ -1,12 +1,10 @@
 return {
-	-- LSP installer
 	{
 		"williamboman/mason.nvim",
 		build = ":MasonUpdate",
 		config = true,
 	},
 
-	-- Mason bridge to lspconfig
 	{
 		"williamboman/mason-lspconfig.nvim",
 		dependencies = { "neovim/nvim-lspconfig" },
@@ -25,15 +23,12 @@ return {
 	},
 	{
 		"saghen/blink.cmp",
-		-- optional: provides snippets for the snippet source
 		dependencies = { "rafamadriz/friendly-snippets" },
 
-		-- use a release tag to download pre-built binaries
 		version = "1.*",
 		---@module 'blink.cmp'
 		---@type blink.cmp.Config
 		opts = {
-			-- See :h blink-cmp-config-keymap for defining your own keymap
 			keymap = {
 				preset = "enter",
 				["<Tab>"] = { "select_next", "fallback" },
