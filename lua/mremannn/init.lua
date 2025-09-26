@@ -45,3 +45,6 @@ vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" })
 -- set no background
 --vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
 --vim.cmd("hi EndOfBuffer guibg=NONE ctermbg=NONE")
+
+--ignore case when searching
+vim.o.ignorecase = true
