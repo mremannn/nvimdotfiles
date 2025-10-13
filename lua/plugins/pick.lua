@@ -3,6 +3,6 @@ return {
 	version = false,
 	config = function()
 		require("mini.pick").setup()
-		vim.keymap.set("n", "<leader>pf", "<cmd>Pick files<CR>")
+		vim.keymap.set("n", "<leader>ff", "<cmd>Pick files<CR>")
 	end,
 }
