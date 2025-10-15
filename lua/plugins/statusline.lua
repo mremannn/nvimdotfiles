@@ -5,13 +5,20 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	opts = {
 		options = {
-			theme = "catppuccin",
+			theme = "tokyonight",
 			component_separators = { left = "|", right = "|" },
-			section_separators = { left = "", right = "" },
+			section_separators = { left = "", right = "" },
 			globalstatus = true,
 		},
 		sections = {
-			lualine_a = { "mode" },
+			lualine_a = {
+				{
+					"mode",
+					fmt = function(str)
+						return str:sub(1, 1)
+					end,
+				},
+			},
 			lualine_b = {},
 			lualine_c = { "filename" },
 			lualine_x = {},

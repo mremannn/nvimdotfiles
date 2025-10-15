@@ -1,3 +1,4 @@
+--return {
 --	"EdenEast/nightfox.nvim",
 --	lazy = false,
 --	priority = 1000,
@@ -21,15 +22,17 @@
 
 --return { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... }
 
---return {
---	"folke/tokyonight.nvim",
---	lazy = false,
---	priority = 1000,
---	config = function()
---		require("tokyonight").setup({})
---		vim.cmd.colorscheme("tokyonight-night")
---	end,
---}
+return {
+	"folke/tokyonight.nvim",
+	lazy = false,
+	priority = 1000,
+	config = function()
+		require("tokyonight").setup({
+			transparent = true,
+		})
+		vim.cmd.colorscheme("tokyonight-night")
+	end,
+}
 
 --return {
 --	"rebelot/kanagawa.nvim",
@@ -53,16 +56,16 @@
 --	end,
 --}
 
-return {
-	"catppuccin/nvim",
-	lazy = false,
-	priority = 1000,
-	name = "catppuccin",
-	config = function()
-		require("catppuccin").setup({
-			flavour = "mocha",
-			transparent_background = true,
-		})
-		vim.cmd.colorscheme("catppuccin")
-	end,
-}
+--return {
+--	"catppuccin/nvim",
+--	lazy = false,
+--	priority = 1000,
+--	name = "catppuccin",
+--	config = function()
+--		require("catppuccin").setup({
+--			flavour = "macchiato",
+--			transparent_background = true,
+--		})
+--		vim.cmd.colorscheme("catppuccin")
+--	end,
+--}
